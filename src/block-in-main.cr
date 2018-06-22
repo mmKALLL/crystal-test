@@ -70,21 +70,21 @@ module Test4
 end
 
 # Is calling the block equivalent to yield?
-module Test4
+module Test5
+	extend self
 	def call_twice(&block)
 		yield 4
-		block 5 # Compile error.
+		block 5 # Results in compile error if used.
 	end
-
-	# The last parameter with preceding ampersand is a dummy, used only to indicate that the function yields. &block does not actually have any actual functionality (?).
 end
 
-# Functions can be redefined.
-def twice(&block)
-	yield 4
-	yield 5
-end
+# Test5.call_twice do |number|
+#	 puts number
+# end
 
+# Why did this result in an error? The last parameter with preceding ampersand is a dummy, used only to indicate that the function yields. Trying to call it as a function results in "undefined method" - &block does not actually have any actual functionality.
+
+# More examples:
 twice do |number|
 	puts number * 1.0 / 2 + 5 # Need * 1.0 to convert to Float64, number.as(Float64) does not work.
 end
