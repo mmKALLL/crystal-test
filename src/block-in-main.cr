@@ -79,22 +79,26 @@ module Test4
 	# The last parameter with preceding ampersand is a dummy, used only to indicate that the function yields. &block does not actually have any actual functionality (?).
 end
 
+# Functions can be redefined.
+def twice(&block)
+	yield 4
+	yield 5
+end
 
-
-call_twice do |number|
-	puts number.as(Float64) / 2 + 5
+twice do |number|
+	puts number * 1.0 / 2 + 5 # Need * 1.0 to convert to Float64, number.as(Float64) does not work.
 end
 
 
 # Lots of syntax options available... So much sugar!
-Test4.call_twice do |number|
+twice do |number|
 	puts number
 end
 
 # TODO: Add some shortened Procs
 
 # You can even ignore the parameters, if you wish.
-call_twice do
+twice do
 	puts "hello!"
 end
 
