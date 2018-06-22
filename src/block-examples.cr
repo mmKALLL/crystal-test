@@ -84,11 +84,15 @@ end
 
 # Why did this result in an error? The last parameter with preceding ampersand is a dummy, used only to indicate that the function yields. Trying to call it as a function results in "undefined method" - &block does not actually have any actual functionality.
 
-# More examples:
+# More working examples:
 twice do |number|
 	puts number * 1.0 / 2 + 5 # Need * 1.0 to convert to Float64, number.as(Float64) does not work.
 end
 
+# You can even ignore the parameters, if you wish.
+twice do
+	puts "hello!"
+end
 
 # Lots of syntax options available... So much sugar!
 twice do |number|
@@ -97,10 +101,6 @@ end
 
 # TODO: Add some shortened Procs
 
-# You can even ignore the parameters, if you wish.
-twice do
-	puts "hello!"
-end
 
 # TODO: Blocks can contain complex logic too.
 # call_twice do |number|
