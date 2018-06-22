@@ -24,4 +24,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- \[mmKALLL\](https://github.com/mmKALLL) Esa Koskinen - creator, maintainer
+- \[[mmKALLL](https://github.com/mmKALLL)\] Esa Koskinen - creator, maintainer
