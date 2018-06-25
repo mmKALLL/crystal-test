@@ -107,3 +107,14 @@ end
 # 	do_things_with_number # TODO: make this into proc, then call it with number
 
 # TODO: Have call_twice take optional parameters.
+
+class Test6
+	@arr 
+	
+	def initialize(@arr : Array(Int32))
+	
+	def call_twice(&block)
+		yield 4
+		yield 5 # Results in compile error if used.
+	end	
+end
